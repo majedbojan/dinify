@@ -1,0 +1,112 @@
+<div class="bg-white rounded-lg shadow-md border border-gray-200 p-6 hover:shadow-lg transition-shadow duration-200">
+  <div class="flex justify-between items-start mb-4">
+    <div class="flex-1">
+      <h3 class="text-lg font-semibold text-gray-900 mb-2">
+        <%= dish.name %>
+      </h3>
+      <% if dish.description.present? %>
+        <p class="text-gray-600 text-sm mb-3">
+          <%= truncate(dish.description, length: 150) %>
+        </p>
+      <% end %>
+    </div>
+    
+    <div class="flex flex-col items-end space-y-2 ml-4">
+      <span class="text-lg font-bold text-gray-900">
+        $<%= dish.formatted_price %>
+      </span>
+      <div class="flex space-x-1">
+        <span class="inline-flex items-center px-2 py-1 rounded text-xs font-medium <%= status_badge_class %>">
+          <%= status_text %>
+        </span>
+        <span class="inline-flex items-center px-2 py-1 rounded text-xs font-medium <%= category_badge_class %>">
+          <%= category_text %>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <% if dish.has_allergens? %>
+    <div class="mb-4">
+      <div class="flex items-center space-x-2 mb-2">
+        <span class="text-sm font-medium text-gray-700">Allergens:</span>
+        <div class="flex space-x-1">
+          <% allergen_icons.each do |allergen| %>
+            <i class="<%= allergen[:icon] %> <%= allergen[:class] %> text-sm" title="<%= allergen[:title] %>"></i>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <% if show_nutrition && has_nutritional_info? %>
+    <div class="mb-4 p-3 bg-gray-50 rounded-md">
+      <h4 class="text-sm font-medium text-gray-700 mb-2">Nutritional Information</h4>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs">
+        <% if dish.calories.present? %>
+          <div class="text-center">
+            <div class="font-semibold text-gray-900"><%= dish.calories %></div>
+            <div class="text-gray-600">Calories</div>
+          </div>
+        <% end %>
+        <% if dish.protein.present? %>
+          <div class="text-center">
+            <div class="font-semibold text-gray-900"><%= dish.protein %>g</div>
+            <div class="text-gray-600">Protein</div>
+          </div>
+        <% end %>
+        <% if dish.carbs.present? %>
+          <div class="text-center">
+            <div class="font-semibold text-gray-900"><%= dish.carbs %>g</div>
+            <div class="text-gray-600">Carbs</div>
+          </div>
+        <% end %>
+        <% if dish.fat.present? %>
+          <div class="text-center">
+            <div class="font-semibold text-gray-900"><%= dish.fat %>g</div>
+            <div class="text-gray-600">Fat</div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
+  <% if dish.ingredients.present? %>
+    <div class="mb-4">
+      <h4 class="text-sm font-medium text-gray-700 mb-1">Ingredients</h4>
+      <p class="text-xs text-gray-600">
+        <%= truncate(dish.ingredients, length: 200) %>
+      </p>
+    </div>
+  <% end %>
+
+  <% if show_actions && can_edit? %>
+    <div class="flex space-x-2 pt-4 border-t border-gray-200">
+      <%= render Ui::ButtonComponent.new(
+        variant: :outline,
+        size: :sm,
+        class: 'flex-1'
+      ) do %>
+        View Details
+      <% end %>
+      
+      <%= render Ui::ButtonComponent.new(
+        variant: :primary,
+        size: :sm,
+        class: 'flex-1'
+      ) do %>
+        Edit Dish
+      <% end %>
+    </div>
+  <% elsif show_actions %>
+    <div class="pt-4 border-t border-gray-200">
+      <%= render Ui::ButtonComponent.new(
+        variant: :outline,
+        size: :sm,
+        class: 'w-full'
+      ) do %>
+        View Details
+      <% end %>
+    </div>
+  <% end %>
+</div>

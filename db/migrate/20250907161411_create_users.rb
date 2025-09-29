@@ -1,11 +1,11 @@
 class CreateUsers < ActiveRecord::Migration[8.1]
   def change
-    create_table :users do |t|
-      t.string :email_address, null: false
+    create_table :users, id: :uuid, default: -> { 'uuid_generate_v4()' } do |t|
+      t.string :email, null: false
       t.string :password_digest, null: false
 
       t.timestamps
     end
-    add_index :users, :email_address, unique: true
+    add_index :users, :email, unique: true
   end
 end
