@@ -94,3 +94,78 @@
 [dir="rtl"] .text-right {
     text-align: left;
 }
+
+/* Dashboard specific RTL adjustments */
+[dir="rtl"] .md\:ml-0 {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+[dir="rtl"] .md\:ml-4 {
+    margin-left: 0;
+    margin-right: 1rem;
+}
+
+[dir="rtl"] .md\:ml-6 {
+    margin-left: 0;
+    margin-right: 1.5rem;
+}
+
+[dir="rtl"] .md\:mt-0 {
+    margin-top: 0;
+}
+
+[dir="rtl"] .md\:px-8 {
+    padding-left: 0;
+    padding-right: 2rem;
+}
+
+[dir="rtl"] .md\:w-64 {
+    width: 16rem;
+}
+
+[dir="rtl"] .md\:flex-col {
+    flex-direction: column;
+}
+
+[dir="rtl"] .md\:items-center {
+    align-items: center;
+}
+
+[dir="rtl"] .md\:justify-between {
+    justify-content: space-between;
+}
+
+[dir="rtl"] .md\:block {
+    display: block;
+}
+
+[dir="rtl"] .md\:flex {
+    display: flex;
+}
+
+[dir="rtl"] .md\:hidden {
+    display: none;
+}
+
+[dir="rtl"] .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+[dir="rtl"] .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+[dir="rtl"] .md\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+[dir="rtl"] .md\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+}
+
+[dir="rtl"] .md\:text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
+}

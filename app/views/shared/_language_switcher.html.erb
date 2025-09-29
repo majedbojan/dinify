@@ -1,4 +1,4 @@
-<div class="relative" data-controller="dropdown" data-action="click@window->dropdown#hide">
+<div class="relative" data-controller="dropdown language-switcher" data-action="click@window->dropdown#hide">
   <button type="button" 
           class="flex items-center text-sm font-medium text-gray-600 hover:text-indigo-600 transition-colors"
           data-action="click->dropdown#toggle">
@@ -14,8 +14,10 @@
   <div class="<%= rtl_locale? ? 'origin-top-left absolute left-0' : 'origin-top-right absolute right-0' %> mt-2 w-32 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none hidden" 
        data-dropdown-target="menu">
     <% available_locales.each do |locale| %>
-      <%= link_to switch_locale_path(locale), 
-          class: "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 #{'bg-indigo-50 text-indigo-700' if current_locale == locale}" do %>
+      <button type="button" 
+              class="w-full text-left block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 #{'bg-indigo-50 text-indigo-700' if current_locale == locale}"
+              data-action="click->language-switcher#switchLanguage"
+              data-locale="<%= locale %>">
         <div class="flex items-center">
           <span class="uppercase font-medium"><%= locale %></span>
           <% if locale == :en %>
@@ -24,7 +26,7 @@
             <span class="<%= rtl_locale? ? 'mr-2' : 'ml-2' %> text-xs">🇸🇦</span>
           <% end %>
         </div>
-      <% end %>
+      </button>
     <% end %>
   </div>
 </div>
