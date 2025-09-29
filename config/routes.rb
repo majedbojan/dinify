@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     # Defines the root path route ("/")
     root "home#index"
     get "/dashboard", to: "home#dashboard"
-    
+
     # Authentication routes
     resources :sessions, only: [ :new, :create, :destroy ]
     resources :passwords, param: :token, only: [ :new, :create, :edit, :update ]

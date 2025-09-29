@@ -19,7 +19,7 @@ module LocaleConcern
   end
 
   def text_direction
-    rtl_locale? ? 'rtl' : 'ltr'
+    rtl_locale? ? "rtl" : "ltr"
   end
 
   def switch_locale_path(locale)
