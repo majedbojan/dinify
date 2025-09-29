@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "build": "yarn build:js && yarn build:css",
+    "build:js": "esbuild ./app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets --minify",
+    "build:css": "tailwindcss --input ./app/assets/stylesheets/application.tailwind.css --output ./app/assets/builds/application.css --minify"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.13",
+    "tailwindcss": "^4.1.13"
+  },
+  "dependencies": {
+    "@hotwired/stimulus": "^3.2.2",
+    "@hotwired/turbo-rails": "^8.0.18",
+    "esbuild": "^0.25.10"
+  }
+}

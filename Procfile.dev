@@ -1,0 +1,5 @@
+redis: redis-server
+sidekiq: bundle exec sidekiq -C ./config/sidekiq/main.yml
+js: yarn build:js --watch
+css: yarn build:css --watch
+rails: rails s -p 3000
