@@ -11,4 +11,9 @@ module.exports = {
     extend: {},
   },
   plugins: [],
+  // Enable RTL support
+  corePlugins: {
+    // Enable direction utilities
+    direction: true,
+  },
 }

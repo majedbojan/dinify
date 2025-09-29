@@ -3,7 +3,7 @@ module LocaleConcern
 
   included do
     before_action :set_locale
-    helper_method :current_locale, :available_locales, :switch_locale_path
+    helper_method :current_locale, :available_locales, :switch_locale_path, :rtl_locale?, :text_direction
   end
 
   def current_locale
@@ -12,6 +12,14 @@ module LocaleConcern
 
   def available_locales
     Rails.application.config.i18n.available_locales || [ :en, :ar ]
+  end
+
+  def rtl_locale?
+    %w[ar he fa ur].include?(current_locale.to_s)
+  end
+
+  def text_direction
+    rtl_locale? ? 'rtl' : 'ltr'
   end
 
   def switch_locale_path(locale)
