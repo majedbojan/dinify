@@ -1,0 +1,19 @@
+<%= content_tag(
+  :button,
+  type: type,
+  disabled: disabled?,
+  class: button_classes,
+  **html_attributes
+) do %>
+  <% if loading %>
+    <%= loading_spinner %>
+  <% elsif show_icon? && icon_position == :left %>
+    <%= content_tag(:i, '', class: "#{icon} #{icon_classes}") %>
+  <% end %>
+
+  <%= content %>
+
+  <% if show_icon? && icon_position == :right %>
+    <%= content_tag(:i, '', class: "#{icon} #{icon_classes}") %>
+  <% end %>
+<% end %>

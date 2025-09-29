@@ -96,13 +96,13 @@
               <div class="flex-shrink-0">
                 <div class="h-8 w-8 bg-indigo-500 rounded-full flex items-center justify-center">
                   <span class="text-white text-sm font-medium">
-                    <%= current_user&.email_address&.first&.upcase || "U" %>
+                    <%= current_user&.email&.first&.upcase || "U" %>
                   </span>
                 </div>
               </div>
               <div class="ml-3">
                 <p class="text-sm font-medium text-gray-700">
-                  <%= current_user&.email_address || "User" %>
+                  <%= current_user&.email || "User" %>
                 </p>
                 <p class="text-xs text-gray-500">Restaurant Owner</p>
               </div>
@@ -156,7 +156,7 @@
                   <span class="sr-only">Open user menu</span>
                   <div class="h-8 w-8 bg-indigo-500 rounded-full flex items-center justify-center">
                     <span class="text-white text-sm font-medium">
-                      <%= current_user&.email_address&.first&.upcase || "U" %>
+                      <%= current_user&.email&.first&.upcase || "U" %>
                     </span>
                   </div>
                 </button>

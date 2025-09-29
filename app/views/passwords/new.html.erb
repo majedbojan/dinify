@@ -12,14 +12,14 @@
 
   <%= form_with url: passwords_path, local: true, class: "space-y-6" do |form| %>
     <div>
-      <%= form.label :email_address, "Email address", class: "block text-sm font-medium text-gray-700" %>
+      <%= form.label :email, "Email address", class: "block text-sm font-medium text-gray-700" %>
       <div class="mt-1">
-        <%= form.email_field :email_address, 
+        <%= form.email_field :email, 
             required: true, 
             autofocus: true, 
             autocomplete: "username", 
             placeholder: "Enter your email address", 
-            value: params[:email_address],
+            value: params[:email],
             class: "appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" %>
       </div>
     </div>
