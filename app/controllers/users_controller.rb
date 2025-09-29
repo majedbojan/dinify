@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  layout "authentication"
+
   def new
     @user = User.new
   end
