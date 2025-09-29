@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  # get "users/new"
-  # get "users/create"
-  resource :session
-  resources :passwords, param: :token
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -15,10 +11,13 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "home#index"
+  get "/dashboard", to: "home#dashboard"
   
-  resource :session
-  resources :passwords, param: :token
-  resources :users, only: [:new, :create]   # 👈 this adds /sign_up
+  # Authentication routes
+  resources :sessions, only: [:new, :create, :destroy]
+  resources :passwords, param: :token, only: [:new, :create, :edit, :update]
+  resources :users, only: [:new, :create]
   get "/sign_up", to: "users#new"
+  get "/sign_in", to: "sessions#new"
 
 end

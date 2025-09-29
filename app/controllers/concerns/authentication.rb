@@ -3,7 +3,7 @@ module Authentication
 
   included do
     before_action :require_authentication
-    helper_method :authenticated?
+    helper_method :authenticated?, :current_user, :Current
   end
 
   class_methods do
@@ -15,6 +15,10 @@ module Authentication
   private
     def authenticated?
       resume_session
+    end
+
+    def current_user
+      Current.session&.user
     end
 
     def require_authentication
@@ -31,7 +35,7 @@ module Authentication
 
     def request_authentication
       session[:return_to_after_authenticating] = request.url
-      redirect_to new_session_path
+      redirect_to sign_in_path
     end
 
     def after_authentication_url
