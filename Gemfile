@@ -13,6 +13,7 @@ gem "redis"
 gem "solid_cache"
 gem "solid_queue"
 gem "solid_cable"
+gem "paper_trail"
 
 # Server
 gem "puma", ">= 5.0"
@@ -33,6 +34,7 @@ gem "kaminari"
 gem "ransack"
 gem "rotp"
 gem "rqrcode"
+gem "view_component"
 
 # Assets
 gem "cssbundling-rails"

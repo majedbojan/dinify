@@ -144,22 +144,24 @@
               </button>
 
               <!-- Profile dropdown -->
-              <div class="ml-3 relative">
-                <div>
-                  <button type="button" class="max-w-xs bg-white flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" id="user-menu-button">
-                    <span class="sr-only">Open user menu</span>
-                    <div class="h-8 w-8 bg-indigo-500 rounded-full flex items-center justify-center">
-                      <span class="text-white text-sm font-medium">
-                        <%= current_user&.email_address&.first&.upcase || "U" %>
-                      </span>
-                    </div>
-                  </button>
-                </div>
-                <div class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none hidden" id="user-menu">
+              <div class="ml-3 relative" data-controller="dropdown" data-action="click@window->dropdown#hide">
+                <button type="button" 
+                        class="max-w-xs bg-white flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        data-action="click->dropdown#toggle">
+                  <span class="sr-only">Open user menu</span>
+                  <div class="h-8 w-8 bg-indigo-500 rounded-full flex items-center justify-center">
+                    <span class="text-white text-sm font-medium">
+                      <%= current_user&.email_address&.first&.upcase || "U" %>
+                    </span>
+                  </div>
+                </button>
+                <div class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none hidden" 
+                     data-dropdown-target="menu">
                   <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Your Profile</a>
                   <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Settings</a>
                   <%= link_to "Sign Out", session_path(Current.session), method: :delete, 
-                      class: "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" %>
+                      class: "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100",
+                      data: { turbo_method: :delete } %>
                 </div>
               </div>
             </div>
@@ -177,18 +179,5 @@
       </div>
     </div>
 
-    <script>
-      // Profile dropdown toggle
-      document.addEventListener('DOMContentLoaded', function() {
-        const userMenuButton = document.getElementById('user-menu-button');
-        const userMenu = document.getElementById('user-menu');
-        
-        if (userMenuButton && userMenu) {
-          userMenuButton.addEventListener('click', function() {
-            userMenu.classList.toggle('hidden');
-          });
-        }
-      });
-    </script>
   </body>
 </html>

@@ -3,11 +3,14 @@ import "@hotwired/turbo-rails"
 
 // Import and register Stimulus controllers
 import { Application } from "@hotwired/stimulus"
-// import { definitionsFromContext } from "@hotwired/stimulus-webpack-helpers"
+
+// Import controllers manually
+import MobileMenuController from "./controllers/mobile_menu_controller"
+import DropdownController from "./controllers/dropdown_controller"
 
 window.Stimulus = Application.start()
-// const context = require.context("./controllers", true, /\.js$/)
-// Stimulus.load(definitionsFromContext(context))
+Stimulus.register("mobile-menu", MobileMenuController)
+Stimulus.register("dropdown", DropdownController)
 
 
 

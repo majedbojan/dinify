@@ -1,5 +1,80 @@
 <% content_for :title, "Dinify - Digital Menu Platform for Restaurants" %>
 
+<!-- Header with Auth Options -->
+<header class="bg-white shadow-sm border-b border-gray-200" data-controller="mobile-menu">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <%= link_to root_path, class: "flex items-center" do %>
+          <div class="h-8 w-8 bg-indigo-600 rounded-lg flex items-center justify-center">
+            <span class="text-white font-bold text-lg">D</span>
+          </div>
+          <span class="ml-2 text-xl font-bold text-gray-900">Dinify</span>
+        <% end %>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:block">
+        <div class="ml-10 flex items-baseline space-x-8">
+          <a href="#features" class="text-gray-600 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors">Features</a>
+          <a href="#pricing" class="text-gray-600 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors">Pricing</a>
+          <a href="#about" class="text-gray-600 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors">About</a>
+          <a href="#contact" class="text-gray-600 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors">Contact</a>
+        </div>
+      </div>
+
+      <!-- Auth Buttons -->
+      <div class="hidden md:block">
+        <div class="ml-4 flex items-center space-x-4">
+          <% if authenticated? %>
+            <%= link_to "Dashboard", dashboard_path, class: "text-gray-600 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors" %>
+            <%= link_to "Sign Out", session_path(Current.session), method: :delete, 
+                class: "bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors",
+                data: { turbo_method: :delete } %>
+          <% else %>
+            <%= link_to "Sign In", sign_in_path, class: "text-gray-600 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors" %>
+            <%= link_to "Get Started", sign_up_path, class: "bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors" %>
+          <% end %>
+        </div>
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden">
+        <button type="button" 
+                class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                data-action="click->mobile-menu#toggle">
+          <span class="sr-only">Open main menu</span>
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation -->
+  <div class="hidden md:hidden" data-mobile-menu-target="menu">
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
+      <a href="#features" class="text-gray-600 hover:text-indigo-600 block px-3 py-2 text-base font-medium">Features</a>
+      <a href="#pricing" class="text-gray-600 hover:text-indigo-600 block px-3 py-2 text-base font-medium">Pricing</a>
+      <a href="#about" class="text-gray-600 hover:text-indigo-600 block px-3 py-2 text-base font-medium">About</a>
+      <a href="#contact" class="text-gray-600 hover:text-indigo-600 block px-3 py-2 text-base font-medium">Contact</a>
+      <div class="border-t border-gray-200 pt-4">
+        <% if authenticated? %>
+          <%= link_to "Dashboard", dashboard_path, class: "text-gray-600 hover:text-indigo-600 block px-3 py-2 text-base font-medium" %>
+          <%= link_to "Sign Out", session_path(Current.session), method: :delete, 
+              class: "bg-indigo-600 hover:bg-indigo-700 text-white block px-3 py-2 rounded-md text-base font-medium mx-3 mt-2",
+              data: { turbo_method: :delete } %>
+        <% else %>
+          <%= link_to "Sign In", sign_in_path, class: "text-gray-600 hover:text-indigo-600 block px-3 py-2 text-base font-medium" %>
+          <%= link_to "Get Started", sign_up_path, class: "bg-indigo-600 hover:bg-indigo-700 text-white block px-3 py-2 rounded-md text-base font-medium mx-3 mt-2" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</header>
+
 <!-- Hero Section -->
 <section class="bg-gradient-to-br from-indigo-50 via-white to-blue-50 py-20">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
