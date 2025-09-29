@@ -1,0 +1,55 @@
+ar:
+  dashboard:
+    header:
+      logo: "دينيفاي"
+      dashboard: "لوحة التحكم"
+      menus: "القوائم"
+      menu_items: "عناصر القائمة"
+      analytics: "التحليلات"
+      qr_codes: "رموز QR"
+      settings: "الإعدادات"
+      search_placeholder: "البحث في القوائم والعناصر..."
+      your_profile: "ملفك الشخصي"
+      settings: "الإعدادات"
+      sign_out: "تسجيل الخروج"
+      restaurant_owner: "مالك المطعم"
+    
+    hero:
+      title: "مرحباً بعودتك!"
+      subtitle: "أدر قوائمك الرقمية وتتبع أداء مطعمك."
+      new_menu: "قائمة جديدة"
+      add_menu_item: "إضافة عنصر قائمة"
+    
+    stats:
+      total_menus: "إجمالي القوائم"
+      menu_items: "عناصر القائمة"
+      qr_views: "مشاهدات QR"
+      languages: "اللغات"
+      view_all_menus: "عرض جميع القوائم"
+      manage_items: "إدارة العناصر"
+      view_analytics: "عرض التحليلات"
+      manage_languages: "إدارة اللغات"
+    
+    recent_activity:
+      title: "النشاط الأخير"
+      subtitle: "آخر تحديثات القائمة وتفاعلات العملاء."
+      added_menu_item: "تم إضافة عنصر قائمة جديد"
+      updated_pricing: "تم تحديث أسعار القائمة"
+      qr_scanned: "تم مسح رمز QR"
+      views_today: "مشاهدات اليوم"
+      items_updated: "عناصر محدثة"
+      hours_ago: "ساعات مضت"
+      day_ago: "يوم مضى"
+      days_ago: "أيام مضت"
+    
+    quick_actions:
+      title: "الإجراءات السريعة"
+      create_menu:
+        title: "إنشاء قائمة جديدة"
+        description: "ابدأ في بناء قائمة رقمية جديدة لمطعمك."
+      generate_qr:
+        title: "توليد رمز QR"
+        description: "أنشئ رموز QR للقوائم الموجودة."
+      view_analytics:
+        title: "عرض التحليلات"
+        description: "تحقق من أداء قائمتك ورؤى العملاء."
