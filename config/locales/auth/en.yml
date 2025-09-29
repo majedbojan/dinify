@@ -1,0 +1,50 @@
+en:
+  auth:
+    sign_in:
+      title: "Sign in to your account"
+      subtitle: "Welcome back! Please sign in to continue."
+      email: "Email address"
+      password: "Password"
+      sign_in: "Sign in"
+      forgot_password: "Forgot your password?"
+      no_account: "Don't have an account?"
+      sign_up: "Sign up"
+      remember_me: "Remember me"
+    
+    sign_up:
+      title: "Create your account"
+      subtitle: "Get started with Dinify and create your first digital menu."
+      email: "Email address"
+      password: "Password"
+      password_confirmation: "Confirm password"
+      sign_up: "Create account"
+      have_account: "Already have an account?"
+      sign_in: "Sign in"
+      terms: "By creating an account, you agree to our Terms of Service and Privacy Policy."
+    
+    password_reset:
+      title: "Reset your password"
+      subtitle: "Enter your email address and we'll send you a link to reset your password."
+      email: "Email address"
+      send_reset: "Send reset instructions"
+      back_to_sign_in: "Back to sign in"
+      check_email: "Check your email"
+      reset_sent: "We've sent password reset instructions to your email address."
+    
+    password_edit:
+      title: "Set your new password"
+      subtitle: "Enter your new password below."
+      password: "New password"
+      password_confirmation: "Confirm new password"
+      update_password: "Update password"
+      password_updated: "Your password has been updated successfully."
+    
+    errors:
+      invalid_credentials: "Try another email address or password."
+      try_again_later: "Try again later."
+      password_mismatch: "Password confirmation doesn't match."
+      email_taken: "Email address has already been taken."
+      invalid_email: "Please enter a valid email address."
+      password_too_short: "Password is too short (minimum is 6 characters)."
+      reset_token_invalid: "Password reset token is invalid or has expired."
+      reset_token_expired: "Password reset token has expired. Please request a new one."

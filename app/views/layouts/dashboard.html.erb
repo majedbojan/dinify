@@ -159,7 +159,7 @@
                      data-dropdown-target="menu">
                   <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Your Profile</a>
                   <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Settings</a>
-                  <%= link_to "Sign Out", session_path(Current.session), method: :delete, 
+                  <%= link_to "Sign Out", session_path(id: Current.session.id), method: :delete, 
                       class: "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100",
                       data: { turbo_method: :delete } %>
                 </div>

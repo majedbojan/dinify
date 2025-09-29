@@ -1,0 +1,125 @@
+en:
+  public:
+    header:
+      logo: "Dinify"
+      features: "Features"
+      pricing: "Pricing"
+      about: "About"
+      contact: "Contact"
+      sign_in: "Sign In"
+      get_started: "Get Started"
+      dashboard: "Dashboard"
+      sign_out: "Sign Out"
+    
+    hero:
+      title: "Digital Menus That"
+      title_highlight: "Build Trust"
+      subtitle: "Create shareable digital menus with detailed nutritional information, allergy warnings, and multi-language support. Perfect for restaurants, cafes, hotels, and food chains."
+      go_to_dashboard: "Go to Dashboard"
+      view_demo: "View Demo"
+      start_free_trial: "Start Free Trial"
+    
+    features:
+      title: "Everything You Need for Digital Menus"
+      subtitle: "Transform your restaurant's menu management with our comprehensive platform"
+      
+      nutritional_info:
+        title: "Nutritional Information"
+        description: "Display detailed nutritional data including calories, protein, carbs, and allergens to build customer trust and meet health requirements."
+      
+      shareable_qr:
+        title: "Shareable & QR Codes"
+        description: "Generate shareable links and QR codes for instant menu access. Perfect for contactless dining and social media sharing."
+      
+      multi_language:
+        title: "Multi-Language Support"
+        description: "Support multiple languages including RTL languages like Arabic. Reach diverse customer bases with localized menus."
+      
+      allergy_warnings:
+        title: "Allergy Warnings"
+        description: "Clear allergy indicators and warnings for common allergens like gluten, nuts, dairy, and shellfish to ensure customer safety."
+      
+      instant_updates:
+        title: "Instant Updates"
+        description: "Update your menu in real-time and changes are instantly reflected across all shared links and QR codes."
+      
+      analytics:
+        title: "Analytics & Insights"
+        description: "Track menu performance, popular dishes, and customer preferences to optimize your offerings and increase sales."
+    
+    how_it_works:
+      title: "How It Works"
+      subtitle: "Get started in minutes with our simple 3-step process"
+      
+      step1:
+        title: "Create Your Account"
+        description: "Sign up and set up your restaurant profile with basic information and preferences."
+      
+      step2:
+        title: "Build Your Menu"
+        description: "Add dishes with photos, descriptions, prices, and detailed nutritional information."
+      
+      step3:
+        title: "Share & Manage"
+        description: "Generate QR codes and shareable links. Update your menu anytime, anywhere."
+    
+    pricing:
+      title: "Simple, Transparent Pricing"
+      subtitle: "Choose the plan that fits your restaurant's needs"
+      
+      free:
+        title: "Free"
+        price: "$0"
+        period: "/month"
+        features:
+          - "Up to 50 menu items"
+          - "Basic nutritional info"
+          - "QR code generation"
+          - "Email support"
+        cta: "Get Started"
+      
+      pro:
+        title: "Pro"
+        price: "$29"
+        period: "/month"
+        badge: "Most Popular"
+        features:
+          - "Unlimited menu items"
+          - "Advanced nutritional data"
+          - "Multi-language support"
+          - "Analytics & insights"
+          - "Priority support"
+        cta: "Start Free Trial"
+      
+      enterprise:
+        title: "Enterprise"
+        price: "Custom"
+        features:
+          - "Everything in Pro"
+          - "API access"
+          - "Custom integrations"
+          - "Dedicated support"
+          - "White-label options"
+        cta: "Contact Sales"
+    
+    cta:
+      title: "Ready to Transform Your Menu?"
+      subtitle: "Join thousands of restaurants already using Dinify to create better dining experiences."
+      go_to_dashboard: "Go to Dashboard"
+      start_free_trial: "Start Your Free Trial"
+    
+    footer:
+      description: "The digital menu platform that helps restaurants create shareable, informative menus with nutritional data and allergy warnings."
+      product:
+        title: "Product"
+        features: "Features"
+        pricing: "Pricing"
+        api: "API"
+        integrations: "Integrations"
+      support:
+        title: "Support"
+        help_center: "Help Center"
+        documentation: "Documentation"
+        contact_us: "Contact Us"
+        status: "Status"
+      copyright: "© %{year} Dinify. All rights reserved."

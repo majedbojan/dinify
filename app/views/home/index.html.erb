@@ -10,31 +10,34 @@
           <div class="h-8 w-8 bg-indigo-600 rounded-lg flex items-center justify-center">
             <span class="text-white font-bold text-lg">D</span>
           </div>
-          <span class="ml-2 text-xl font-bold text-gray-900">Dinify</span>
+          <span class="ml-2 text-xl font-bold text-gray-900"><%= t('public.header.logo') %></span>
         <% end %>
       </div>
 
       <!-- Desktop Navigation -->
       <div class="hidden md:block">
         <div class="ml-10 flex items-baseline space-x-8">
-          <a href="#features" class="text-gray-600 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors">Features</a>
-          <a href="#pricing" class="text-gray-600 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors">Pricing</a>
-          <a href="#about" class="text-gray-600 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors">About</a>
-          <a href="#contact" class="text-gray-600 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors">Contact</a>
+          <a href="#features" class="text-gray-600 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors"><%= t('public.header.features') %></a>
+          <a href="#pricing" class="text-gray-600 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors"><%= t('public.header.pricing') %></a>
+          <a href="#about" class="text-gray-600 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors"><%= t('public.header.about') %></a>
+          <a href="#contact" class="text-gray-600 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors"><%= t('public.header.contact') %></a>
         </div>
       </div>
 
       <!-- Auth Buttons -->
       <div class="hidden md:block">
         <div class="ml-4 flex items-center space-x-4">
+          <!-- Language Switcher -->
+          <%= render 'shared/language_switcher' %>
+          
           <% if authenticated? %>
-            <%= link_to "Dashboard", dashboard_path, class: "text-gray-600 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors" %>
-            <%= link_to "Sign Out", session_path(Current.session), method: :delete, 
+            <%= link_to t('public.header.dashboard'), dashboard_path, class: "text-gray-600 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors" %>
+            <%= link_to t('public.header.sign_out'), session_path(id: Current.session.id), method: :delete, 
                 class: "bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors",
                 data: { turbo_method: :delete } %>
           <% else %>
-            <%= link_to "Sign In", sign_in_path, class: "text-gray-600 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors" %>
-            <%= link_to "Get Started", sign_up_path, class: "bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors" %>
+            <%= link_to t('public.header.sign_in'), sign_in_path, class: "text-gray-600 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors" %>
+            <%= link_to t('public.header.get_started'), sign_up_path, class: "bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors" %>
           <% end %>
         </div>
       </div>
@@ -63,7 +66,7 @@
       <div class="border-t border-gray-200 pt-4">
         <% if authenticated? %>
           <%= link_to "Dashboard", dashboard_path, class: "text-gray-600 hover:text-indigo-600 block px-3 py-2 text-base font-medium" %>
-          <%= link_to "Sign Out", session_path(Current.session), method: :delete, 
+          <%= link_to t('public.header.sign_out'), session_path(id: Current.session.id), method: :delete, 
               class: "bg-indigo-600 hover:bg-indigo-700 text-white block px-3 py-2 rounded-md text-base font-medium mx-3 mt-2",
               data: { turbo_method: :delete } %>
         <% else %>
@@ -80,23 +83,22 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center">
       <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-        Digital Menus That
-        <span class="text-indigo-600">Build Trust</span>
+        <%= t('public.hero.title') %>
+        <span class="text-indigo-600"><%= t('public.hero.title_highlight') %></span>
       </h1>
       <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-        Create shareable digital menus with detailed nutritional information, allergy warnings, and multi-language support. 
-        Perfect for restaurants, cafes, hotels, and food chains.
+        <%= t('public.hero.subtitle') %>
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <% if authenticated? %>
-          <%= link_to "Go to Dashboard", dashboard_path, 
+          <%= link_to t('public.hero.go_to_dashboard'), dashboard_path, 
               class: "bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors shadow-lg hover:shadow-xl" %>
-          <%= link_to "View Demo", "#demo", 
+          <%= link_to t('public.hero.view_demo'), "#demo", 
               class: "border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors" %>
         <% else %>
-          <%= link_to "Start Free Trial", sign_up_path, 
+          <%= link_to t('public.hero.start_free_trial'), sign_up_path, 
               class: "bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors shadow-lg hover:shadow-xl" %>
-          <%= link_to "View Demo", "#demo", 
+          <%= link_to t('public.hero.view_demo'), "#demo", 
               class: "border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors" %>
         <% end %>
       </div>

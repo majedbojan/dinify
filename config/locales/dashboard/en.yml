@@ -1,0 +1,55 @@
+en:
+  dashboard:
+    header:
+      logo: "Dinify"
+      dashboard: "Dashboard"
+      menus: "Menus"
+      menu_items: "Menu Items"
+      analytics: "Analytics"
+      qr_codes: "QR Codes"
+      settings: "Settings"
+      search_placeholder: "Search menus, items..."
+      your_profile: "Your Profile"
+      settings: "Settings"
+      sign_out: "Sign Out"
+      restaurant_owner: "Restaurant Owner"
+    
+    hero:
+      title: "Welcome back!"
+      subtitle: "Manage your digital menus and track your restaurant's performance."
+      new_menu: "New Menu"
+      add_menu_item: "Add Menu Item"
+    
+    stats:
+      total_menus: "Total Menus"
+      menu_items: "Menu Items"
+      qr_views: "QR Views"
+      languages: "Languages"
+      view_all_menus: "View all menus"
+      manage_items: "Manage items"
+      view_analytics: "View analytics"
+      manage_languages: "Manage languages"
+    
+    recent_activity:
+      title: "Recent Activity"
+      subtitle: "Your latest menu updates and customer interactions."
+      added_menu_item: "Added new menu item"
+      updated_pricing: "Updated menu pricing"
+      qr_scanned: "QR code scanned"
+      views_today: "views today"
+      items_updated: "items updated"
+      hours_ago: "hours ago"
+      day_ago: "day ago"
+      days_ago: "days ago"
+    
+    quick_actions:
+      title: "Quick Actions"
+      create_menu:
+        title: "Create New Menu"
+        description: "Start building a new digital menu for your restaurant."
+      generate_qr:
+        title: "Generate QR Code"
+        description: "Create QR codes for your existing menus."
+      view_analytics:
+        title: "View Analytics"
+        description: "Check your menu performance and customer insights."

@@ -9,14 +9,20 @@ Rails.application.routes.draw do
   # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
-  # Defines the root path route ("/")
-  root "home#index"
-  get "/dashboard", to: "home#dashboard"
+  # Locale scope
+  scope "(:locale)", locale: /en|ar/ do
+    # Defines the root path route ("/")
+    root "home#index"
+    get "/dashboard", to: "home#dashboard"
+    
+    # Authentication routes
+    resources :sessions, only: [ :new, :create, :destroy ]
+    resources :passwords, param: :token, only: [ :new, :create, :edit, :update ]
+    resources :users, only: [ :new, :create ]
+    get "/sign_up", to: "users#new"
+    get "/sign_in", to: "sessions#new"
+  end
 
-  # Authentication routes
-  resources :sessions, only: [ :new, :create, :destroy ]
-  resources :passwords, param: :token, only: [ :new, :create, :edit, :update ]
-  resources :users, only: [ :new, :create ]
-  get "/sign_up", to: "users#new"
-  get "/sign_in", to: "sessions#new"
+  # Redirect root without locale to default locale
+  get "/", to: redirect("/en", status: 302)
 end
