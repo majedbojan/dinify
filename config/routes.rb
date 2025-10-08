@@ -21,6 +21,21 @@ Rails.application.routes.draw do
     resources :users, only: [ :new, :create ]
     get "/sign_up", to: "users#new"
     get "/sign_in", to: "sessions#new"
+
+    # Restaurant management routes
+    resources :restaurants do
+      resources :menus do
+        resources :dishes
+        member do
+          patch :publish
+          patch :archive
+        end
+      end
+    end
+
+    # Public menu routes (no authentication required)
+    get "/menu/:restaurant_id", to: "public_menus#show", as: :public_menu
+    get "/menu/:restaurant_id/:menu_id", to: "public_menus#show_menu", as: :public_menu_show
   end
 
   # Redirect root without locale to default locale
